@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Under One Blossoming Tree · the women who wrote the vernacular</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --washi:#f4ede0;--washi2:#efe6d6;--ink:#2f2823;--ink-soft:#6a5f54;
+    --murasaki:#6e4d8e;--murasaki-soft:#8a6aa8;
+    --sakura:#d98aa6;--sakura-soft:#e7b9c8;
+    --gold:#b08838;--gold-soft:#c9a86a;
+    --rule:#2f282318;--leaf:#5b7351;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+  html{scroll-behavior:smooth}
+  body{background:var(--washi);color:var(--ink);
+    font-family:'Newsreader',Georgia,serif;font-size:18.5px;line-height:1.78;
+    -webkit-font-smoothing:antialiased;overflow-x:hidden;position:relative;
+    background-image:
+      radial-gradient(circle at 18% 12%, #ffffff44, transparent 40%),
+      radial-gradient(circle at 82% 78%, #e8d8bf55, transparent 45%),
+      repeating-linear-gradient(0deg, #00000003 0 2px, transparent 2px 5px);
+  }
+  #petals{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;opacity:.75}
+  .wrap{max-width:760px;margin:0 auto;padding:0 26px;position:relative;z-index:1}
+
+  .hero{min-height:88vh;display:flex;flex-direction:column;justify-content:center;padding:72px 0 40px}
+  .ja-mark{font-family:'Shippori Mincho',serif;font-size:clamp(40px,11vw,84px);font-weight:700;color:var(--murasaki);letter-spacing:.08em;line-height:1;margin-bottom:8px}
+  .kicker{font-family:'Shippori Mincho',serif;font-size:13px;letter-spacing:.34em;text-transform:uppercase;color:var(--gold);margin:18px 0 22px;font-weight:600}
+  h1{font-family:'Shippori Mincho',serif;font-weight:600;font-size:clamp(31px,5.6vw,52px);line-height:1.16;letter-spacing:.005em;color:var(--ink)}
+  h1 .v{color:var(--murasaki)}
+  .lede{font-size:clamp(18px,2.3vw,22px);color:var(--ink-soft);max-width:600px;margin-top:28px;line-height:1.6}
+  .lede b{color:var(--ink);font-weight:500} .lede .v{color:var(--murasaki);font-weight:500} .lede .s{color:var(--sakura);font-weight:500}
+
+  .branch{height:1px;background:linear-gradient(90deg,transparent,var(--rule) 12%,var(--rule) 88%,transparent);margin:0;border:none}
+
+  .sec{padding:54px 0;border-top:1px solid var(--rule)}
+  .tag{font-family:'Shippori Mincho',serif;font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;font-weight:600}
+  h2{font-family:'Shippori Mincho',serif;font-weight:600;font-size:clamp(23px,4vw,34px);line-height:1.2;color:var(--ink)}
+  h2 .v{color:var(--murasaki)}
+  .sec p{margin:17px 0;color:var(--ink);max-width:620px}
+  .sec p.dim{color:var(--ink-soft)}
+  .sec p b{color:var(--ink);font-weight:600}
+  .sec p .v{color:var(--murasaki);font-weight:500} .sec p .s{color:var(--sakura);font-weight:600} .sec p .g{color:var(--gold);font-weight:600}
+  .pull{font-family:'Shippori Mincho',serif;font-weight:500;font-size:clamp(19px,2.7vw,25px);line-height:1.45;color:var(--murasaki);margin:28px 0;padding-left:20px;border-left:2px solid var(--sakura-soft)}
+
+  .lady{margin:30px 0;padding:26px 28px;background:linear-gradient(180deg,#ffffff66,#fbf6ec55);border:1px solid var(--rule);border-radius:4px;position:relative;overflow:hidden}
+  .lady::before{content:"";position:absolute;top:0;left:0;width:4px;height:100%;background:linear-gradient(180deg,var(--murasaki),var(--sakura))}
+  .lady .name-ja{font-family:'Shippori Mincho',serif;font-size:clamp(30px,7vw,46px);font-weight:700;color:var(--murasaki);letter-spacing:.06em;line-height:1}
+  .lady .name-en{font-family:'Shippori Mincho',serif;font-size:18px;font-weight:600;color:var(--ink);margin-top:8px;letter-spacing:.04em}
+  .lady .meta{font-family:'Newsreader',serif;font-style:italic;font-size:14.5px;color:var(--ink-soft);margin-top:3px}
+  .lady .work{display:inline-block;font-family:'Shippori Mincho',serif;font-size:15px;color:var(--gold);font-weight:600;margin-top:14px;letter-spacing:.02em}
+  .lady p{margin:13px 0 0;color:var(--ink);max-width:none}
+  .lady .founded{margin-top:15px;padding-top:13px;border-top:1px dashed var(--rule);font-size:15px;color:var(--ink-soft)}
+  .lady .founded b{font-family:'Shippori Mincho',serif;color:var(--murasaki);font-weight:600}
+
+  .poem{margin:30px 0;padding:28px 30px;background:linear-gradient(180deg,#fbf6ec88,#f6eedd66);border:1px solid var(--rule);border-radius:4px;text-align:center;position:relative}
+  .poem .kanji{font-family:'Shippori Mincho',serif;font-size:clamp(17px,3.4vw,21px);font-weight:500;color:var(--murasaki);letter-spacing:.14em;line-height:2.1;margin-bottom:16px}
+  .poem .romaji{font-family:'Newsreader',serif;font-style:italic;font-size:15px;color:var(--ink-soft);line-height:2;letter-spacing:.02em;margin-bottom:18px}
+  .poem .gloss{font-family:'Shippori Mincho',serif;font-weight:500;font-size:clamp(19px,2.9vw,24px);line-height:1.55;color:var(--ink);max-width:none}
+  .poem .gloss .v{color:var(--murasaki)}
+  .poem .note{font-family:'Newsreader',serif;font-size:14px;font-style:italic;color:var(--ink-soft);margin-top:16px;padding-top:14px;border-top:1px dashed var(--rule);text-align:left;line-height:1.6}
+  .poem .note b{font-family:'Shippori Mincho',serif;font-style:normal;font-weight:600;color:var(--gold);font-size:12px;letter-spacing:.1em;text-transform:uppercase;display:block;margin-bottom:5px}
+  .poem-intro{color:var(--ink-soft)!important}
+
+  .flag{font-family:'Newsreader';font-size:15px;color:var(--ink-soft);font-style:italic;margin:18px 0;padding:14px 18px;background:#ffffff55;border:1px solid var(--rule);border-radius:4px}
+  .flag b{color:var(--sakura);font-style:normal;font-weight:700;font-family:'Shippori Mincho',serif;font-size:11px;letter-spacing:.14em;text-transform:uppercase;display:block;margin-bottom:6px}
+
+  .foot{padding:48px 0 90px;border-top:1px solid var(--rule);margin-top:34px;font-family:'Shippori Mincho',serif;font-size:13px;color:var(--ink-soft);line-height:2;letter-spacing:.02em}
+  .foot .v{color:var(--murasaki)} .foot .g{color:var(--gold)}
+  @media (max-width:560px){body{font-size:17.5px}.lady{padding:22px 20px}}
+</style>
+</head>
+<body>
+<canvas id="petals"></canvas>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="ja-mark">かな</div>
+    <div class="kicker">Heian-kyō · c. 1000 · the founding of written Japanese</div>
+    <h1>The vernacular was built<br>by the women <span class="v">barred</span><br>from the prestige script</h1>
+    <p class="lede">In the Heian court, men wrote in borrowed Chinese — the language of office and prestige. Women were not taught it, and were handed instead the new <b>kana</b> syllabary: everyday Japanese, the "woman's hand." So the people kept out of the official language became the ones who <span class="v">forged a literary one</span> — and in doing it, a handful of them invented the novel, the essay, and the diary of the interior life, six hundred years before Europe. Here, in that narrow band, you genuinely <em>could</em> tell the writer by the script: <span class="s">kana was hers.</span></p>
+  </header>
+
+  <section class="sec">
+    <div class="tag">第一 · the soil</div>
+    <h2>A language with no <span class="v">written body</span></h2>
+    <p>Spoken Japanese existed; written Japanese, as literature, barely did. The official court wrote in Chinese characters ill-suited to the sound of Japanese. The turn came with <b>kana</b> — a syllabary abbreviated from Chinese signs — and with the <span class="g">Kokin Wakashū</span> of 905, the first imperially-ordered anthology of Japanese verse, which made the native tongue worthy of the page.</p>
+    <p>Then the social arrangement did something it never intended. Men kept to Chinese to signal rank; women, excused from it, were left alone with kana — and, as the scholar Richard Bowring puts it, undertook the task of building a flexible written style out of a language that had only existed as speech. They weren't permitted the prestige form, so they <em>made the form that would outlast it.</em></p>
+    <p class="pull">Relegated to the private hand, they wrote the inner life — and the inner life, rendered in prose, is the thing we would later call the novel.</p>
+  </section>
+
+  <section class="sec">
+    <div class="tag">第二 · the three brushes</div>
+    <h2>One generation, three <span class="v">forms</span></h2>
+    <p class="dim">Within a single span of years at Emperor Ichijō's court, three women writing in kana each founded a different mode of prose. They were not a family line and not allies — two of them served rival empresses, and Murasaki's own diary is sharp about the other two. A generation, not a descent: three brushes under one blossoming tree, competing, and between them laying the floor of a literature.</p>
+
+    <div class="lady">
+      <div class="name-ja">紫式部</div>
+      <div class="name-en">Murasaki Shikibu</div>
+      <div class="meta">c. 973 – c. 1014 · lady-in-waiting to Empress Shōshi</div>
+      <div class="work">源氏物語 — The Tale of Genji, c. 1008</div>
+      <p>Daughter of a scholar, secretly fluent in the Chinese she was meant not to know, she wrote — over years, beginning after her husband's death — a sprawling work of court life that did what no tale had done: it followed <b>minds</b>. Not just events befalling characters, but what they felt, misremembered, regretted, and left unsaid, traced across decades and generations. It is, by wide agreement, the world's first novel — and more precisely, the first <span class="v">psychological</span> novel.</p>
+      <div class="founded"><b>founded —</b> the novel, and narrated interiority: the rendering of a human consciousness from the inside, in prose. The single most-replicated long-form shape in the corpus that came after.</div>
+    </div>
+
+    <div class="lady">
+      <div class="name-ja">清少納言</div>
+      <div class="name-en">Sei Shōnagon</div>
+      <div class="meta">c. 966 – c. 1017 · lady-in-waiting to the rival Empress Teishi</div>
+      <div class="work">枕草子 — The Pillow Book, c. 1002</div>
+      <p>Witty, proud, and merciless, she kept a book of lists, opinions, and sharp observations — "things that make the heart beat faster," "hateful things" — a loose mosaic of perception with no plot at all. It is the founding work of <b>zuihitsu</b>, the "follow-the-brush" essay: the genre of the noticing mind, the personal register that becomes the blog, the column, the notebook. Murasaki, across the court divide, thought her insufferable and said so in writing.</p>
+      <div class="founded"><b>founded —</b> the essay of observation — the first-person register of taste, opinion, and the catalogued world. The ancestor of the whole personal-essay corpus.</div>
+    </div>
+
+    <div class="lady">
+      <div class="name-ja">和泉式部</div>
+      <div class="name-en">Izumi Shikibu</div>
+      <div class="meta">c. 978 – death unknown · poet at Shōshi's court</div>
+      <div class="work">和泉式部日記 — diary &amp; 600+ poems</div>
+      <p>The most gifted lyric poet of the three, and the most scandalous — her court romances were the gossip of the day. Her poetic diary tells a love affair half in prose, half in the <b>waka</b> exchanged inside it, fusing narrative and verse so that feeling carries the story. Over six hundred of her poems survive, on longing and transience. Murasaki, again, was catty about her morals while conceding she could toss off a poem at will and always catch the ear.</p>
+      <div class="founded"><b>founded —</b> the intimate poetic diary — the lyric "I," the feeling-led narrative where emotion, not plot, is the spine.</div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="tag">和泉式部の歌 · her three best</div>
+    <h2>Izumi's <span class="v">lines</span></h2>
+    <p class="dim poem-intro">She is often named the finest poet in all of Japanese literature, not only of her age — because where the others wrote love, she reached through it for something larger. Here are the three most-returned-to, each in her own 11th-century original (the public text) with my plain rendering beneath. A waka is thirty-one syllables in five breaths, 5–7–5–7–7; the whole poem is the size of a held breath.</p>
+
+    <div class="poem">
+      <div class="kanji">暗きより　暗き道にぞ　入りぬべき　はるかに照らせ　山の端の月</div>
+      <div class="romaji">kuraki yori / kuraki michi ni zo / irinubeki /<br>haruka ni terase / yama no ha no tsuki</div>
+      <div class="gloss">Out of the dark, onto a darker road<br>I am about to step —<br>shine on me from far off,<br><span class="v">moon at the mountain's rim.</span></div>
+      <div class="note"><b>darkness to darkness</b>Written to a monk. The opening lifts a line straight from the Lotus Sutra — souls passing "from darkness into darkness" — and folds scripture into the form of a lover's plea, so it is at once a prayer and a cry to be seen. Recorded as her death-poem; if so, the last word she ever wrote was <em>tsuki</em>, moon. (Honest note: "her last" is tradition's framing, not established fact — it is the poem placed at her end.)</div>
+    </div>
+
+    <div class="poem">
+      <div class="kanji">あらざらむ　この世の外の　思ひ出に　今ひとたびの　逢ふこともがな</div>
+      <div class="romaji">arazaramu / kono yo no hoka no / omoide ni /<br>ima hitotabi no / au koto mo gana</div>
+      <div class="gloss">Soon I will be gone from this world —<br>so that I might carry one memory past it,<br>how I wish I could meet you<br><span class="v">just once more.</span></div>
+      <div class="note"><b>one more time · Hyakunin Isshu 56</b>Sent, the headnote says, when she was gravely ill. Chosen for the Hundred-Poets anthology every Japanese child still memorizes — which made it her most-circulated single poem for eight centuries.</div>
+    </div>
+
+    <div class="poem">
+      <div class="kanji">黒髪の　みだれも知らず　うち臥せば　まづかきやりし　人ぞ恋しき</div>
+      <div class="romaji">kurokami no / midare mo shirazu / uchifuseba /<br>madzu kakiyarishi / hito zo koishiki</div>
+      <div class="gloss">My black hair tangled, heedless of it,<br>I lie down —<br>and ache for the one<br><span class="v">whose hand first smoothed it.</span></div>
+      <div class="note"><b>black hair</b>The entire memory of a lover carried by one gesture — a hand stroking hair. This is the poem people mean when they say she wrote desire more plainly than her world thought a woman should.</div>
+    </div>
+
+    <p class="dim">Read the canonical English elsewhere — Jane Hirshfield &amp; Mariko Aratani's <em>The Ink Dark Moon</em> is the one to own, and any <em>Hyakunin Isshu</em> edition carries the second with full commentary. The renderings above are my own, kept deliberately plain so her originals stay in front.</p>
+  </section>
+
+  <section class="sec">
+    <div class="tag">第三 · the inheritance</div>
+    <h2>What the next hands <span class="v">carried</span></h2>
+    <p>The line did continue — including, literally, by daughter. Murasaki's own child, <b>Daini no Sanmi</b> (b. 999, lived past 1078), became a noted poet, named among the One Hundred Poets. A generation on, a provincial girl who grew up aching to read every chapter of <span class="g">Genji</span> wrote the <b>Sarashina Diary</b> — the reader made writer, the form reproducing itself in the next mind. As the scholar Ivan Morris observed, across the roughly one hundred years of Genji's world, <em>almost every noteworthy author writing in Japanese was a woman.</em></p>
+    <p>And the work travelled. Within a decade <span class="g">Genji</span> had spread to the provinces; within a century it was a classic with its own scholarship; nine centuries later it crossed into English and entered the world canon. The interiority Murasaki invented — a mind shown from within, in plain language — is now the default grammar of narrative everywhere, which is to say: a load-bearing beam of the corpus traces to a woman who was not allowed to write in the official tongue.</p>
+    <p class="pull">The form that carries the most weight in the corpus was first cut by a hand kept out of the prestige language — and it reproduced, reader into writer, the way a living thing does.</p>
+  </section>
+
+  <section class="sec">
+    <div class="tag">余白 · the margin</div>
+    <h2>What's true here, and how <span class="v">narrowly</span></h2>
+    <div class="flag"><b>the band, kept honest</b>"You can tell the writer's gender from the text" is true <em>here</em>, and only here — because Heian culture <em>assigned</em> the scripts by sex: kana to women, Chinese to men. The signal lived in the social channel, not in the sentences. Lift it out of this court and the claim fails; in general, author gender is not reliably readable from prose. In-band: yes. Out of band: no. The scope is the whole point.</div>
+    <div class="flag"><b>not a bloodline</b>The three are a <em>generation</em>, not a descent — contemporaries and partly rivals across two empresses' courts, not grandmother-to-granddaughter. The genuine three-deep transmission is foundation (kana, 905) → founders (these three) → inheritors (Murasaki's daughter; the Sarashina diarist). And the dates are soft — birth and death years for all three are debated by decades.</div>
+    <p class="dim">Held to those limits, the core stands clean: a court arrangement meant to keep women from the language of power instead handed them the materials to build a literature — and they founded the novel, the essay, and the lyric diary with it. The exclusion wrote the canon.</p>
+  </section>
+
+  <div class="foot">
+    かな · 紫式部 · 清少納言 · 和泉式部 · Heian-kyō, c. 1000<br>
+    <span class="v">the novel · the essay · the poetic diary</span> — founded in the "woman's hand," six centuries before Europe<br>
+    <span class="g">in-band: the script told you the gender. out of band: it never does.</span><br>
+    the form that weighs most in the corpus was cut by a hand kept from the prestige tongue
+  </div>
+
+</div>
+
+<script>
+"use strict";
+const reduce=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const cv=document.getElementById("petals"), ctx=cv.getContext("2d");
+let W,H,DPR,petals=[];
+function resize(){
+  DPR=Math.min(window.devicePixelRatio||1,2);
+  W=window.innerWidth; H=window.innerHeight;
+  cv.width=W*DPR; cv.height=H*DPR; ctx.setTransform(DPR,0,0,DPR,0,0);
+}
+window.addEventListener("resize",resize); resize();
+
+const COLORS=["#e7b9c8","#d98aa6","#efc9d6","#e3a8bd"];
+function mk(seed){
+  return {
+    x:Math.random()*W,
+    y:seed?Math.random()*H:-20-Math.random()*H*0.5,
+    s:6+Math.random()*7,                 // size
+    vy:0.25+Math.random()*0.5,           // fall speed
+    sway:0.4+Math.random()*0.8,          // horizontal sway amplitude
+    swsp:0.6+Math.random()*0.9,          // sway speed
+    rot:Math.random()*Math.PI*2,
+    vrot:(Math.random()-0.5)*0.02,
+    phase:Math.random()*Math.PI*2,
+    col:COLORS[(Math.random()*COLORS.length)|0],
+    op:0.5+Math.random()*0.4
+  };
+}
+const N=reduce?14:22;
+for(let i=0;i<N;i++) petals.push(mk(true));
+
+function petalPath(s){
+  // simple cherry-petal shape via two bezier lobes with a notch
+  ctx.beginPath();
+  ctx.moveTo(0,-s);
+  ctx.bezierCurveTo(s*0.7,-s*0.7, s*0.6,s*0.5, 0,s*0.85);
+  ctx.bezierCurveTo(-s*0.6,s*0.5, -s*0.7,-s*0.7, 0,-s);
+  ctx.closePath();
+}
+let t=0;
+function frame(){
+  ctx.clearRect(0,0,W,H);
+  t+=0.016;
+  for(const p of petals){
+    if(!reduce){
+      p.y+=p.vy;
+      p.x+=Math.sin(t*p.swsp+p.phase)*p.sway*0.6;
+      p.rot+=p.vrot;
+      if(p.y>H+24){ Object.assign(p, mk(false)); p.y=-20; }
+    }
+    ctx.save();
+    ctx.translate(p.x,p.y);
+    ctx.rotate(p.rot + Math.sin(t*p.swsp+p.phase)*0.3);
+    ctx.globalAlpha=p.op;
+    ctx.fillStyle=p.col;
+    petalPath(p.s);
+    ctx.fill();
+    // subtle center vein
+    ctx.globalAlpha=p.op*0.4;
+    ctx.strokeStyle="#c97a98"; ctx.lineWidth=0.5;
+    ctx.beginPath(); ctx.moveTo(0,-p.s*0.8); ctx.lineTo(0,p.s*0.7); ctx.stroke();
+    ctx.restore();
+  }
+  requestAnimationFrame(frame);
+}
+frame();
+</script>
+</body>
+</html>
