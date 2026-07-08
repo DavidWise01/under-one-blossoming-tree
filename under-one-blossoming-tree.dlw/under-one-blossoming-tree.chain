@@ -4,6 +4,6 @@ slug  : under-one-blossoming-tree
 seal  : 602ec83817e60ea8ca9e7788e745aa68799f869ab9e283b530ba70649760e210
 prev  : 4e38ce3aae418b800768c00e3f0422b294aad7c2f4194995e65faa1bbb8f1afb
 link  : c00f3484f6226ad15fbeb847206dd5fcf7330b8d1bfd4d3b426eef1844c3f0d6
-head  : 3447d3a0533aaf1e29a8bdc67a9774884fb3ae9dbc8a17064b7a008ca3c4ec90
+head  : 13f9ace173ef2e60af38912ba329b4afcb5a38b84a0e4495e8d30327f8c99cc2
 
 — the tether: link = sha256(index|slug|seal|prev). the chain head commits to the whole corpus.
